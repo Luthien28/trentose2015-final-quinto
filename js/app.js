@@ -4,6 +4,7 @@
  */
 var TriviaModel = {
   current:0,
+	esatta :0,
    /* Collection of available questions */
    collection : questions, 
   
@@ -52,10 +53,11 @@ var TriviaModel = {
 	   console.log(answer);
 	   if(answer == questions[TriviaModel.current].answer) {
 		   window.alert("Correct");
+		   TriviaModel.esatta++;
 		    TriviaModel.getCurrentQuestion();
 	   }	else window.alert("Incorrect");
 	   $("#answer").refresh;
-	  
+	  $("#monsterCatched").text(TriviaModel.esatta);
 	   
    }  
            
